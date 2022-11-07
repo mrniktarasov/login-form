@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import {
+  Routes,
+  Route,
+  useNavigate
+} from "react-router-dom";
+import { LoginButton } from './components/LoginButton';
+import Modal from './components/Modal';
+import LoginForm from './components/LoginForm';
 import './App.css';
+import RegisterForm from './components/RegisterForm';
 
 function App() {
+  const navigate = useNavigate();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <div className="App">
+          <Routes>
+            <Route path="/login" element={(
+              <Modal onClose={() => navigate('/')}>
+                <LoginForm />
+              </Modal>
+            )}/>
+            <Route path="/register" element={(
+              <Modal onClose={() => navigate('/')}>
+                <RegisterForm />
+              </Modal>
+            )}/>
+            <Route path="/" element={(
+              <LoginButton onClick={() => navigate('/login')}/>
+            )}/>
+          </Routes>
+        </div>
   );
 }
 

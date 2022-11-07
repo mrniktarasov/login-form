@@ -1,0 +1,44 @@
+.registerForm {
+    &_container {
+        height: 465px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &_login {
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    &_error {
+        margin-top: 5px;
+        height: 40px;
+        color: red;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    &_success {
+        margin-top: 5px;
+        height: 40px;
+        color: green;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    &_email {
+        width: 200px;
+    }
+
+    &_password {
+        width: 200px;
+    }
+
+    &_pale {
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
