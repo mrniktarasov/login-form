@@ -16,18 +16,18 @@ function App() {
   return (
         <div className="App">
           <Routes>
-            <Route path="/login" element={(
-              <Modal onClose={() => navigate('/')}>
+            <Route path="/login-form/login" element={(
+              <Modal onClose={() => navigate('/login-form')}>
                 <LoginForm />
               </Modal>
             )}/>
-            <Route path="/register" element={(
-              <Modal onClose={() => navigate('/')}>
+            <Route path="/login-form/register" element={(
+              <Modal onClose={() => navigate('/login-form')}>
                 <RegisterForm />
               </Modal>
             )}/>
-            <Route path="/" element={(
-              <LoginButton onClick={() => navigate('/login')}/>
+            <Route path="/login-form" element={(
+              <LoginButton onClick={() => navigate('/login-form/login')}/>
             )}/>
           </Routes>
         </div>

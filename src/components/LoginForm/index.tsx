@@ -1,5 +1,5 @@
 import { FunctionComponentElement, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import LoginInput from "../LoginInput";
 import { getHash } from "../modules/get-hash";
 import './index.scss';
@@ -35,7 +35,7 @@ export default function LoginForm(): FunctionComponentElement<void> {
         if(localStorage.getItem(hash)) {
             setSuccess('You are sucessfully logged in');
             setError(null);
-            setTimeout(() => navigate('/home'), 5000);
+            setTimeout(() => navigate('/login-form'), 5000);
         } else {
             setError('Invalid email or password');
         }
@@ -63,7 +63,7 @@ export default function LoginForm(): FunctionComponentElement<void> {
             />
             <span className="loginForm_error">{error}</span>
             <button type="submit" className="button-1"  disabled={isLoginDisabled} onClick={handleSubmit}>Submit</button>
-            <a onClick={() => navigate('/register')} href='' className='loginForm_pale'>Register</a>
+            <Link to='/login-form/register' className='loginForm_pale'>Register</Link>
         </div>
     );
 }

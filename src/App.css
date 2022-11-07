@@ -41,6 +41,7 @@
 
 .button-1 {
   width: 100px;
+  height: 50px;
   align-self: center;
   appearance: button;
   backface-visibility: hidden;

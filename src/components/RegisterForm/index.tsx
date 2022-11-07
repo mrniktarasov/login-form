@@ -1,5 +1,5 @@
 import { FunctionComponentElement, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import LoginInput from "../LoginInput";
 import { getHash } from "../modules/get-hash";
 import './index.scss';
@@ -77,7 +77,7 @@ export default function RegisterForm(): FunctionComponentElement<void> {
             password: passwordOne,
         }));
         setSuccess('You are sucessfully registered');
-        setTimeout(() => navigate('/home'), 5000);
+        setTimeout(() => navigate('/login-form'), 5000);
     }
 
     const isSubmitDisabled: boolean = !email && !passwordOne && !passwordTwo;
@@ -110,7 +110,7 @@ export default function RegisterForm(): FunctionComponentElement<void> {
             />
             <span className="registerForm_error">{passwordErrorTwo}</span>
             <button type="submit" className="button-1" onClick={handleSubmit} disabled={isSubmitDisabled}>Submit</button>
-            <a onClick={() => navigate('/login')} href='' className='registerForm_pale'>Login</a>
+            <Link to='/login-form/login' className='registerForm_pale'>Login</Link>
         </div>
     );
 }
